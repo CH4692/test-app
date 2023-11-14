@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${openSans.className} `}>
         <head>
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="/test-nextjs/app/favicon.ico" />
         </head>
         <div className="relative min-h-screen min-w-screen flex justify-center items-center bg-accent flex-col">
           {children}
