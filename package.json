@@ -8,8 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "cy:run": "cypress run",
-    "test": "start-server-and-test start http-get://localhost:3000 cy:run",
-    "postinstall": "prisma generate"
+    "test": "start-server-and-test start http-get://localhost:3000 cy:run"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
