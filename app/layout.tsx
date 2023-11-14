@@ -18,6 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${openSans.className} `}>
+        <head>
+          <link rel="icon" href="/favicon.ico" />
+        </head>
         <div className="relative min-h-screen min-w-screen flex justify-center items-center bg-accent flex-col">
           {children}
         </div>

@@ -5,6 +5,7 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons/faTrash";
 import Checkbox from "./checkbox";
 import { useState } from "react";
 import axios from "axios";
+import { redirect } from "next/navigation";
 
 export default function Task(
   props: Readonly<{
@@ -30,7 +31,7 @@ export default function Task(
       });
       if (response.ok) {
         console.log("Todo item deleted successfully");
-        window.location.reload();
+        redirect("/");
       } else {
         console.error("Failed to delete todo item");
         // Handle error, e.g., show an error message to the user

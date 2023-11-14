@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Task from "./task";
 import Input from "./input";
+import { redirect } from "next/navigation";
 
 type Task = {
   id: string;
@@ -22,6 +23,7 @@ export default function Todos(props: { data: Array<Task> }) {
       )
     );
     console.log(value);
+    redirect("/");
   };
   return (
     <>
