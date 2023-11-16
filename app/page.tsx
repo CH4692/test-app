@@ -5,7 +5,7 @@ import Todos from "./components/todos";
 export const dynamic = 'auto',
   dynamicParams = true,
   revalidate = 0,
-  fetchdate = 'auto',
+  fetchCache = 'auto',
   runtime = 'nodejs',
   preferredRegion = 'auto'
 
