@@ -4,8 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons/faTrash";
 import Checkbox from "./checkbox";
 import { useState } from "react";
-import axios from "axios";
-import { redirect } from "next/navigation";
+
 
 export default function Task(
   props: Readonly<{
@@ -18,7 +17,10 @@ export default function Task(
   const [count, setCount] = useState(0);
 
   const clickHandler = async () => {
-    await axios.put(`api/task?id=${props.id}&complete=${!complete}`);
+    await fetch(`api/task?id=${props.id}&complete=${!complete}`, {
+      method: "PUT",
+      cache: "no-store"
+    });
 
     setComplete(!complete);
     setCount(count + 1);
@@ -28,10 +30,11 @@ export default function Task(
     try {
       const response = await fetch(`api/task?id=${props.id}`, {
         method: "DELETE",
+        cache: "no-store"
       });
       if (response.ok) {
         console.log("Todo item deleted successfully");
-        redirect("/");
+        window.location.reload()
       } else {
         console.error("Failed to delete todo item");
         // Handle error, e.g., show an error message to the user
