@@ -2,6 +2,13 @@ import Link from "next/link";
 import prisma from "./db";
 import Todos from "./components/todos";
 
+export const dynamic = 'auto',
+  dynamicParams = true,
+  revalidate = 0,
+  fetchdate = 'auto',
+  runtime = 'nodejs',
+  preferredRegion = 'auto'
+
 export default async function Page() {
   const todos = await prisma.todo.findMany();
 
